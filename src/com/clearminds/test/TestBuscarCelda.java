@@ -1,0 +1,21 @@
+package com.clearminds.test;
+
+import com.clearminds.componentes.Celda;
+import com.clearminds.maquina.Maquinadulces;
+
+public class TestBuscarCelda {
+	public static void main(String[] args) {
+		Maquinadulces maquina=new Maquinadulces();
+		maquina.agregarCelda(new Celda("A"));
+        maquina.agregarCelda(new Celda("B"));
+        maquina.agregarCelda(new Celda("C"));
+        maquina.agregarCelda(new Celda("D"));
+        maquina.mostrarConfiguracion();
+		Celda celda=maquina.buscarCelda("C");
+		System.out.println("Celda Encontrada: "+celda.getCodigo());
+		Celda celda2=maquina.buscarCelda("F");
+		if(celda2==null){
+			System.out.println("No existe la celda buscada");
+		}
+	}
+}
